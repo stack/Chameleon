@@ -25,7 +25,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "ChameleonSwift"
+            name: "ChameleonSwift",
             path: ".",
             sources: ["Pod/Classes/Swift"]
         )
