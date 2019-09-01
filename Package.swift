@@ -9,11 +9,15 @@ let package = Package(
     products: [
         .library(
             name: "Chameleon",
-            targets: ["Chameleon", "ChameleonSwift"]
+            targets: ["Chameleon"]
         ),
+        .library(
+            name: "ChameleonSwift",
+            targets: ["ChameleonSwift"]
+        )
     ],
     targets: [
         .target(name: "Chameleon"),
-        .target(name: "ChameleonSwift", dependencies: ["Chameleon"])
+        .target(name: "ChameleonSwift")
     ]
 )
