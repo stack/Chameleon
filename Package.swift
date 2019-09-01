@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "Chameleon",
-            targets: ["Chameleon"]
+            targets: ["Chameleon", "ChameleonSwift"]
         ),
     ],
     targets: [
@@ -23,6 +23,11 @@ let package = Package(
                 .headerSearchPath("."),
                 .headerSearchPath("include")
             ]
+        )
+        .target(
+            name: "ChameleonSwift"
+            path: ".",
+            sources: ["Pod/Classes/Swift"]
         )
     ]
 )
