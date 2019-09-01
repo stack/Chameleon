@@ -3,14 +3,16 @@ import PackageDescription
 
 let package = Package(
     name: "Chameleon",
-    platforms: [
-        .iOS(.v12), .tvOS(.v12), .watchOS(.v5)
-    ],
+    platforms: [.iOS(.v9)],
     products: [
         .library(
             name: "Chameleon",
-            targets: ["Chameleon", "ChameleonSwift"]
+            targets: ["Chameleon"]
         ),
+        .library(
+            name: "ChameleonSwift",
+            targets: ["Chameleon", "ChameleonSwift"]
+        )
     ],
     targets: [
         .target(
@@ -18,16 +20,20 @@ let package = Package(
             path: ".",
             sources: ["Pod/Classes/Objective-C"],
             publicHeadersPath: "Pod/Classes/Objective-C",
-            cxxSettings: [
+            cSettings: [
                 .headerSearchPath("Pod/Classes/Objective-C"),
                 .headerSearchPath("."),
-                .headerSearchPath("include")
+                .headerSearchPath("include"),
+                .define("UIKIT_DEFINE_AS_PROPERTIES")
             ]
         ),
         .target(
             name: "ChameleonSwift",
-            path: ".",
-            sources: ["Pod/Classes/Swift"]
+            dependencies: ["Chameleon"],
+            path: "Pod/Classes/Swift",
+            cSettings: [
+                .define("UIKIT_DEFINE_AS_PROPERTIES")
+            ]
         )
     ]
 )
