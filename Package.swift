@@ -23,7 +23,7 @@ let package = Package(
                 .headerSearchPath("."),
                 .headerSearchPath("include")
             ]
-        )
+        ),
         .target(
             name: "ChameleonSwift"
             path: ".",
