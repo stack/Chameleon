@@ -618,6 +618,13 @@ typedef NS_ENUM (NSInteger, UIShadeStyle) {
 #else
 
 /**
+ * Returns an array of all flat colors.
+ *
+ * @return An array of UIColor objects.
+ */
++ (NSArray *)flatColors;
+
+/**
  *  Returns a flat color object whose HSB values are 0.00, 0.00, 0.15 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
