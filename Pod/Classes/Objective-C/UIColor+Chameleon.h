@@ -793,6 +793,8 @@ typedef NS_ENUM (NSInteger, UIShadeStyle) {
 + (UIColor *)flatYellowDarkColor;
 #endif
 
++ (NSArray *)flatColors;
+
 #pragma mark - Randomizing Colors
 #if UIKIT_DEFINE_AS_PROPERTIES
 /**

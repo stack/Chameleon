@@ -11,10 +11,6 @@
 @implementation UIView (UIViewAppearance_Swift)
 
 + (instancetype)appearanceWhenContainedWithin: (NSArray *)containers {
-    
-    NSUInteger count = containers.count;
-    NSAssert(count <= 10, @"The count of containers greater than 10 is not supported.");
-    
     return [self appearanceWhenContainedInInstancesOfClasses:containers];
 }
 
