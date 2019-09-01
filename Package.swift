@@ -17,11 +17,11 @@ let package = Package(
             name: "Chameleon",
             path: ".",
             sources: ["Pod/Classes/Objective-C"],
-            publicHeadersPath: "",
+            publicHeadersPath: "Pod/Classes/Objective-C",
             cxxSettings: [
+                .headerSearchPath("Pod/Classes/Objective-C"),
                 .headerSearchPath("."),
-                .headerSearchPath("include"),
-                .headerSearchPath("Pod/Classes/Objective-C")
+                .headerSearchPath("include")
             ]
         )
     ]
